@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Departments | NITW</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f7fc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-left: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #00264d;
+      border-radius: 5px;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 64, 128, 0.85), rgba(0, 64, 128, 0.85)), url('images/department-hero.jpg') no-repeat center center/cover;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .departments-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .departments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .department-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .department-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .department-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .department-card-content {
+      padding: 20px;
+    }
+
+    .department-card h3 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    .department-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .department-card a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .department-card a:hover {
+      color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #004080;
+      color: white;
+      margin-top: 50px;
+    }
+
+    .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #aab8d3;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="logo.png" alt="University Logo" class="logo" />
+      <h1>National Institute Of Technology, Warangal</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Our Academic Departments</h2>
+    <p>Explore world-class education and research opportunities across a wide range of disciplines at NIT Warangal.</p>
+  </section>
+
+  <section class="departments-section">
+    <div class="departments-grid">
+      <div class="department-card">
+        <img src="cse.jpg" alt="Computer Science">
+        <div class="department-card-content">
+          <h3>Computer Science & Engineering</h3>
+          <p>Cutting-edge research in AI, ML, Cybersecurity, and Software Development.</p>
+          <a href="departments/cse.html">Explore →</a>
+        </div>
+      </div>
+
+      <div class="department-card">
+        <img src="ece.jpg" alt="Electronics">
+        <div class="department-card-content">
+          <h3>Electronics & Communication</h3>
+          <p>Innovative learning in signal processing, embedded systems, and more.</p>
+          <a href="departments/ece.html">Explore →</a>
+        </div>
+      </div>
+
+      <div class="department-card">
+        <img src="mech.jpg" alt="Mechanical">
+        <div class="department-card-content">
+          <h3>Mechanical Engineering</h3>
+          <p>Advance in robotics, thermodynamics, design, and manufacturing tech.</p>
+          <a href="departments/mech.html">Explore →</a>
+        </div>
+      </div>
+
+      <div class="department-card">
+        <img src="civil.jpg" alt="Civil">
+        <div class="department-card-content">
+          <h3>Civil Engineering</h3>
+          <p>Infrastructure design, smart cities, transportation, and sustainability.</p>
+          <a href="departments/civil.html">Explore →</a>
+        </div>
+      </div>
+
+      <div class="department-card">
+        <img src="eee.jpg" alt="Electrical">
+        <div class="department-card-content">
+          <h3>Electrical Engineering</h3>
+          <p>Power systems, control engineering, and renewable energy research.</p>
+          <a href="departments/eee.html">Explore →</a>
+        </div>
+      </div>
+
+      <div class="department-card">
+        <img src="chem.jpg" alt="Chemical">
+        <div class="department-card-content">
+          <h3>Chemical Engineering</h3>
+          <p>Work on process design, energy systems, and advanced materials.</p>
+          <a href="departments/chem.html">Explore →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="support.html">Support</a>
+    <a href="downloads.html">Downloads</a>
+    <a href="sitemap.html">Site Map</a>
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+  </div>
+  <p>&copy; 2025 National Institute of Technology, Warangal. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home | NITW</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f7fc;
+      color: #333;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-left: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #00264d;
+      border-radius: 5px;
+    }
+
+    .hero {
+      background: url('background.jpg') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero-content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-content a {
+      background-color: #007bff;
+      color: white;
+      padding: 14px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-content a:hover {
+      background-color: #0056b3;
+    }
+
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .about h3 {
+      font-size: 2rem;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .highlights {
+      background-color: #eaf0fb;
+      padding: 60px 20px;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .highlight-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight-card h4 {
+      margin-bottom: 10px;
+      color: #004080;
+    }
+
+    .highlight-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #004080;
+      color: white;
+    }
+
+    .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #aab8d3;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* style.css - Events */
+.events-section {
+  background-color: #eaf2fb;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.events-section h2 {
+  color: #003366;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-family: 'Merriweather', serif;
+}
+
+.events-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-card h4 {
+  color: #0077cc;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.event-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.announcement-strip {
+  background-color: #fffbe6;
+  padding: 12px 20px;
+  color: #333;
+  font-weight: bold;
+  font-size: 1rem;
+  border-top: 2px solid #ffc107;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+    @media (max-width: 768px) {
+      .hero-content h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="logo.png" alt="University Logo" class="logo" />
+      <h1>National Instituite Of Technology,Warangal</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to NIT Warangal</h2>
+      <p>Empowering students with world-class education and cutting-edge research since 1959.</p>
+      <a href="admission.html">Apply Now</a>
+    </div>
+  </section>
+
+  <section class="about">
+    <h3>About Our Institute</h3>
+    <p>
+      National Institute of Technology, Warangal is a premier engineering institution known for academic excellence, research innovation, and global impact.
+      We offer a wide range of undergraduate, postgraduate, and doctoral programs across multiple disciplines.
+    </p>
+  </section>
+
+  <section class="highlights">
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <h4>Top-Ranked Programs</h4>
+        <p>Our curriculum is designed by top faculty and aligned with industry needs.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>World-Class Faculty</h4>
+        <p>Learn from highly qualified professors, researchers, and industry experts.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>Vibrant Campus Life</h4>
+        <p>From cultural fests to hackathons, experience a holistic student life at NITW.</p>
+      </div>
+    </div>
+  </section>
+<section class="events-section">
+  <h2>Upcoming Events</h2>
+  <div class="events-container">
+    <div class="event-card">
+      <h4>Orientation Day</h4>
+      <p>📍 Main Auditorium<br>📅 Sept 10, 2025</p>
+    </div>
+    <div class="event-card">
+      <h4>TechFest 2025</h4>
+      <p>📍 Central Grounds<br>📅 Sept 22–24, 2025</p>
+    </div>
+    <div class="event-card">
+      <h4>Alumni Meetup</h4>
+      <p>📍 Heritage Hall<br>📅 Oct 5, 2025</p>
+    </div>
+  </div>
+</section>
+<div class="announcement-strip">
+  🔔 Admissions for 2025 are now open! | 📢 TechFest registration ends on Sept 15th | 🎉 Convocation on Oct 20th
+</div>
+
+  <footer>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Support</a>
+    <a href="#">Downloads</a>
+    <a href="#">Site Map</a>
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+  </div>
+  <p>&copy; 2025 National Institute of Technology, Warangal. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | NIT Warangal</title>
+  <style>
+    /* Reset and Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #002d59;
+    }
+
+    .hero {
+      background: url('bac.jpg') center/cover no-repeat;
+      height: 45vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h1 {
+      z-index: 1;
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery figure {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+      background: white;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery figure:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery figcaption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 1rem;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .gallery figure:hover figcaption {
+      opacity: 1;
+    }
+
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #aab8d3;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="logo.png" alt="Logo" class="logo">
+      <h2 style="margin-left: 15px;">National Instituite Of Technology, Warangal</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Our College Moments</h1>
+  </section>
+
+  <section class="gallery">
+    <figure>
+      <img src="campus1.webp">
+      <figcaption>Campus Entrance</figcaption>
+    </figure>
+    <figure>
+      <img src="campus2.webp" alt="Library">
+      <figcaption>Central Library</figcaption>
+    </figure>
+    <figure>
+      <img src="campus3.jpg" alt="Fest Stage">
+      <figcaption>Cultural Fest</figcaption>
+    </figure>
+    <figure>
+      <img src="campus4.webp" alt="Computer Lab">
+      <figcaption>Computer Science Lab</figcaption>
+    </figure>
+    <figure>
+      <img src="campus5.jpg" alt="Students Group">
+      <figcaption>Student Projects</figcaption>
+    </figure>
+    <figure>
+      <img src="campus6.webp" alt="Science Building">
+      <figcaption>Science Block</figcaption>
+    </figure>
+    <figure>
+      <img src="campus7.webp" alt="Workshop">
+      <figcaption>Mechanical Workshop</figcaption>
+    </figure>
+    <figure>
+      <img src="campus8.jpg" alt="Coding Session">
+      <figcaption>Coding Session</figcaption>
+    </figure>
+  </section>
+
+  <footer>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="support.html">Support</a>
+    <a href="downloads.html">Downloads</a>
+    <a href="sitemap.html">Site Map</a>
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+  </div>
+  <p>&copy; 2025 National Institute of Technology, Warangal. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
